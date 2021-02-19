@@ -1,7 +1,14 @@
-import '../styles/globals.css'
-
+import { ThemeProvider, CssBaseline } from "@material-ui/core";
+import { AuthProvider } from "../auth";
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider>
+      <CssBaseline />
+      <AuthProvider>
+        <Component {...pageProps} />
+      </AuthProvider>
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
